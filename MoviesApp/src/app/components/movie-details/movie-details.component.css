@@ -1,0 +1,23 @@
+.movie-details{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    z-index: 0;    
+}
+.movie-details .ovarlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .6;
+    z-index: -1;
+}
+.movie-poster img{
+    border-radius: 20px;
+    border: 4px solid var(--primaryColor);
+  }
+
+  

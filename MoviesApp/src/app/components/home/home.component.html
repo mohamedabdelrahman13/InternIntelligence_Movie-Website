@@ -1,0 +1,70 @@
+<section class="popular-movies">
+   <div class="container">
+        <div class="popular">
+            <div class="section-header text-center mt-5 mb-5">
+                <h2>Popular</h2>
+                <span class="line"></span>
+            </div>
+            <div class="row justify-content-around align-items-center">
+                <div (click)="showMovieDetails(movie.id)" *ngFor="let movie of popular ; let i = index" class="card col-12 col-md-3 p-0" style="width: 18rem;">
+                    <img [src]="'https://image.tmdb.org/t/p/w342' +movie.poster_path" height="350px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{movie.original_title}}</h5>
+                    <p>release date : {{movie.release_date}}</p>
+                    <a (click)="showMovieDetails(movie.id)" class="btn btn-outline-warning">view movie</a>
+                    </div>
+                </div>
+            </div>
+        </div>     
+        <div class="top-rated">
+            <div class="section-header text-center mt-5 mb-5">
+                <h2>Top rated</h2>
+                <span class="line"></span>
+            </div>
+            <div class="row justify-content-around align-items-center">
+                <div (click)="showMovieDetails(movie.id)" *ngFor="let movie of topRated; let i = index" class="card col-12 col-md-3 p-0" style="width: 18rem;">
+                    <img [src]="'https://image.tmdb.org/t/p/w500' +movie.poster_path" class="card-img-top" height="350px" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{movie.original_title}}</h5>
+                    <p>release date : {{movie.release_date}}</p>
+                    <a (click)="showMovieDetails(movie.id)" class="btn btn-outline-warning w-50">view movie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="upcoming">
+            <div class="section-header text-center mt-5 mb-5">
+                <h2>upcoming</h2>
+                <span class="line"></span>
+            </div>
+            <div class="row justify-content-around align-items-center">
+                <div (click)="showMovieDetails(movie.id)" *ngFor="let movie of upcoming ; let i = index" class="card col-12 col-md-3 p-0" style="width: 18rem;">
+                    <img [src]="'https://image.tmdb.org/t/p/w500' +movie.poster_path" class="card-img-top" height="350px" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{movie.original_title}}</h5>
+                    <p>release date : {{movie.release_date}}</p>
+                    <a (click)="showMovieDetails(movie.id)" class="btn btn-outline-warning">view movie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nowPlaying">
+            <div class="section-header text-center mt-5 mb-5">
+                <h2>Now Playing</h2>
+                <span class="line"></span>
+            </div>
+            <div class="row justify-content-around align-items-center">
+                <div (click)="showMovieDetails(movie.id)" *ngFor="let movie of nowPlaying ;let i = index" class="card col-12 col-md-3 p-0" style="width: 18rem;">
+                    <img [src]="'https://image.tmdb.org/t/p/w500' +movie.poster_path" class="card-img-top" height="350px" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{movie.original_title}}</h5>
+                    <p>release date : {{movie.release_date}}</p>
+                    <a (click)="showMovieDetails(movie.id)" class="btn btn-outline-warning">view movie</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+     </div>
+</section>

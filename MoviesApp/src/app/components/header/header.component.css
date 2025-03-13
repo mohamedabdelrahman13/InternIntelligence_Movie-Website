@@ -1,0 +1,53 @@
+form input.form-control{
+    background-color: var(--backgroundColor) !important;
+    color: var(--textColor);
+    border: 1px solid var(--textColor2);
+}
+form input.form-control:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+form nav li{
+    margin-right: 20px;
+}
+
+a.active{
+    color: var(--primaryColor);
+    font-weight: bold;
+}
+
+form{
+    position: relative;
+}
+
+.filtered-movies{
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.filtered-movies .filtered-movies-content span{
+    color: white;
+    font-size: medium;
+}
+.filtered-movies .filtered-movies-content:hover span{
+    color: var(--primaryColor);
+}
+
+.filtered-movies-content:hover span{
+    transition: color .3s ease-in-out;
+}
+
+.filtered-movies-content:hover span{
+    transition: color .3s ease-in-out;
+}
+
+
+
+
+.filtered-movies div{
+   cursor: pointer;
+}

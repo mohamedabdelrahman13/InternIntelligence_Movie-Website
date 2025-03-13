@@ -1,0 +1,37 @@
+<section class="movie-details" [style.backgroundImage]="'url(https://image.tmdb.org/t/p/w1280' + currentMovie.backdrop_path + ')'">
+    <div class="ovarlay"></div>
+    <div class="container w-75">
+        <div class="row justify-content-center align-items-center"> 
+            <div class="movie-poster col-12 col-lg-6">
+                <img [src]="'https://image.tmdb.org/t/p/w342' + currentMovie.poster_path" alt="...">
+            </div>
+            <div class="col-12 col-lg-6 pt-5 pb-5 ">
+                <div class="movie-info">
+                    <div class="Title mb-3">
+                        <h1>{{this.currentMovie.original_title}}</h1>
+                        <p class="text-muted fst-italic" *ngIf="this.currentMovie.tagline">{{ this.currentMovie.tagline }}</p>
+                        <span class="text-muted fst-italic" *ngFor="let item of currentMovie.genres">{{item.name}},</span>
+                        <div class="Production-companies">
+                            <img class="ms-2 me-2" *ngFor="let company of this.currentMovie?.production_companies"  [src]="'https://image.tmdb.org/t/p/w342' + company.logo_path" width="30px" height="30px" alt="...">
+                        </div>
+                    </div>
+                    <div class="overview mb-3">
+                        <h5>Overview : <span>{{this.currentMovie.overview}}</span></h5>
+                    </div>
+                    <div class="rate mb-3">
+                        <h5>Rating : <i class="fa-solid fa-star" style="color: var(--primaryColor);"></i> <span>{{ currentMovie.vote_average }} / 10</span></h5>
+                    </div>
+                    <div class="release-date mb-3">
+                        <h5>release-date : <span>{{this.currentMovie.release_date}}</span></h5>
+                    </div>
+                    <div class="Runtime mb-3">
+                        <h5>Duration : <span>{{this.currentMovie.runtime}} minutes</span></h5>
+                    </div>
+                    <div class="status mb-3">
+                        <h5>Status : <span>{{this.currentMovie.status}}</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

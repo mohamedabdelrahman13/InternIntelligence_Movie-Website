@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand">Movies<span style="color: var(--primaryColor);">App</span></a>
+      <button 
+      class="navbar-toggler"
+       type="button"
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent"
+         aria-expanded="false"
+          aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"  aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active"  >Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex w-50">
+          <input #searchInput (input)="onSearchChange($event)" 
+          class="form-control me-2" 
+          type="search"
+           placeholder="What are you looking for?" 
+           aria-label="Search">
+
+          <div class="filtered-movies bg-dark">
+            <div (click)="showMovieDetails(movie.id)"
+             class="filtered-movies-content d-flex justify-content-start align-items-center" 
+             *ngFor="let movie of filteredMovies">
+                 <div class="img me-4">
+                     <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" width="40" height="40px" alt="...">
+                 </div>
+                 <div class="filtered-movies-title">
+                     <span>{{movie.original_title}}</span>
+                 </div>
+                </div>
+         </div>   
+          <button (click)="showAllSearchResults(searchInput.value)" class="btn btn-outline-warning" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>

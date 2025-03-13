@@ -1,0 +1,29 @@
+<section class="search-results">
+    <div class="search-results-content container">
+        <div class="search-results-content-title mt-5 mb-5 text-center">
+            <div *ngIf="this.searchResults.results?.length">
+                <h1>Results for "{{this.searchTerm}}"</h1>
+                <span class="line"></span>
+            </div>
+            <h1 *ngIf="!this.searchResults.results?.length" style="color: var(--textColor2);">No Results Found for "{{this.searchTerm}}"</h1>
+            <div class="pages text-center mt-5 mb-5">
+                <button *ngFor="let page of pages"
+                  (click)="showPageResults(page)"
+                  [class.active]="page === this.currentPage">
+                  {{page}}
+                </button>
+             </div>
+       </div>
+       <div class="row justify-content-between align-items-center">
+            <div (click)="showMovieDetails(movie.id)" *ngFor="let movie of this.searchResults?.results ; let i = index" class="card col-12 col-md-3 p-0" style="width: 18rem;">
+                <img [src]="'https://image.tmdb.org/t/p/w500' +movie.poster_path" class="card-img-top" height="300px" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{movie.original_title}}</h5>
+                <p>release date : {{movie.release_date}}</p>
+                <a (click)="showMovieDetails(movie.id)" class="btn btn-outline-warning">view movie</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section>

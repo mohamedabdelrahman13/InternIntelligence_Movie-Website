@@ -1,0 +1,31 @@
+.card {
+    background-color: var(--backgroundColor);
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    padding: 8px;
+}
+.card:hover {
+    transform: scale(1.02);
+    border: 1px solid var(--primaryColor);
+}
+
+h5 , h4 , h3 , h2 , h1{
+    color: var(--textColor);
+}
+
+p{
+    color: var(--textColor2);
+}
+
+.pages button{
+  border-radius: 10px;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: black;
+  color: white;
+}
+
+.pages button.active{
+    background-color: var(--primaryColor);
+    color: black;
+}
